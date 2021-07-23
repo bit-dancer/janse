@@ -14,17 +14,24 @@ repositories {
 }
 
 dependencies {
-    constraints {
-        implementation("org.apache.commons:commons-text:1.9")
-    }
+    // Lombok
+    compileOnly(Dependencies.LOMBOK)
+    annotationProcessor(Dependencies.LOMBOK)
+    testCompileOnly(Dependencies.LOMBOK)
+    testAnnotationProcessor(Dependencies.LOMBOK)
 
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    // MapStruct
+    compileOnly(Dependencies.MAPSTRUCT)
+    annotationProcessor(Dependencies.MAPSTRUCT_PROCESSOR)
+
+    // Test
+    testImplementation(Dependencies.SPRING_BOOT_STARTER_TEST)
 }
 
 tasks.withType<JavaCompile> {
-    sourceCompatibility = BuildArgs.JAVA_VERSION
-    targetCompatibility = BuildArgs.JAVA_VERSION
-    options.encoding = BuildArgs.UTF_8
+    sourceCompatibility = Settings.JAVA_VERSION
+    targetCompatibility = Settings.JAVA_VERSION
+    options.encoding = Settings.UTF_8
 }
 
 tasks.test {

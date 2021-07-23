@@ -2,27 +2,27 @@ import com.github.gradle.node.yarn.task.YarnTask
 
 plugins {
     id(Plugins.CONVENTIONS_NODE_UI)
-    id("com.github.node-gradle.node") version "3.1.0"
+    id(Plugins.NODE) version Versions.PLUGIN_NODE_VERSION
 }
 
 val lintTask = tasks.register<YarnTask>("lintWebapp") {
     dependsOn(tasks.yarn)
-    args.addAll("run", "lint")
+    args.addAll(Settings.COMMAND_UI_LINT)
 }
 
 val buildTask = tasks.register<YarnTask>("buildWebapp") {
     dependsOn(tasks.yarn, lintTask)
-    args.addAll("run", "build")
+    args.addAll(Settings.COMMAND_UI_BUILD)
 }
 
-var copyResources = tasks.register<Copy>("copyResources") {
-    from("dist")
-    into("build/resources/main/static")
+var copyTask = tasks.register<Copy>("copyResources") {
+    from(Settings.UI_DEFAULT_OUTPUT_DIR)
+    into(Settings.UI_BUILD_OUTPUT_DIR)
 }
 
 tasks.jar {
     doFirst {
-        delete("dist")
+        delete(Settings.UI_DEFAULT_OUTPUT_DIR)
     }
-    dependsOn(buildTask, copyResources)
+    dependsOn(buildTask, copyTask)
 }

@@ -8,14 +8,13 @@ object Versions {
     /**
      * Plugin Version
      */
-    const val SONAR_PLUGIN_VERSION = "3.0"
-    const val RELEASE_PLUGIN_VERSION = "2.8.1"
-    const val FORK_PLUGIN_VERSION = "5.0.13"
+    const val PLUGIN_NODE_VERSION = "3.1.0"
 
     /**
      * Bom Version
      */
     const val SPRING_BOOT_VERSION = "2.5.3"
+    const val DEPENDENCY_MANAGEMENT_VERSION = "1.0.11.RELEASE"
 
     /**
      * Jar Version
