@@ -1,6 +1,6 @@
-import {useIntl} from 'umi';
-import {GithubOutlined} from '@ant-design/icons';
-import {DefaultFooter} from '@ant-design/pro-layout';
+import { useIntl } from 'umi';
+import { GithubOutlined } from '@ant-design/icons';
+import { DefaultFooter } from '@ant-design/pro-layout';
 
 export default () => {
   const intl = useIntl();
@@ -15,10 +15,10 @@ export default () => {
       links={[
         {
           key: 'Github',
-          title: <GithubOutlined/>,
+          title: <GithubOutlined />,
           href: 'https://github.com/bit-dancer/janse',
           blankTarget: true,
-        }
+        },
       ]}
     />
   );

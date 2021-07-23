@@ -8,8 +8,8 @@ plugins {
 
 repositories {
     mavenLocal()
-    maven(url = "https://maven.aliyun.com/repository/public")
-    maven(url = "https://repo.spring.io/milestone/")
+    maven { url = Repositories.ALIYUN_REPO }
+    maven { url = Repositories.SPRING_REPO }
     mavenCentral()
 }
 
@@ -19,6 +19,12 @@ dependencies {
     }
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+}
+
+tasks.withType<JavaCompile> {
+    sourceCompatibility = BuildArgs.JAVA_VERSION
+    targetCompatibility = BuildArgs.JAVA_VERSION
+    options.encoding = BuildArgs.UTF_8
 }
 
 tasks.test {

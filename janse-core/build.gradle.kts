@@ -1,5 +1,5 @@
 plugins {
-    id("janse.java-library-conventions")
+    id(Plugins.CONVENTIONS_JAVA_LIBRARY)
 }
 
 dependencies {
