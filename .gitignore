@@ -34,3 +34,6 @@ logs/
 
 ### Docker Test Credentials ###
 .env
+
+# Ignore Gradle build output directory
+build
