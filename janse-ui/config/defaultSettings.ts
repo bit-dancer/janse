@@ -1,4 +1,4 @@
-import { Settings as LayoutSettings } from '@ant-design/pro-layout';
+import {Settings as LayoutSettings} from '@ant-design/pro-layout';
 
 const Settings: LayoutSettings & {
   pwa?: boolean;
@@ -14,7 +14,7 @@ const Settings: LayoutSettings & {
   colorWeak: false,
   title: 'Janse',
   pwa: false,
-  logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+  logo: 'https://raw.githubusercontent.com/bit-dancer/janse/master/janse-ui/public/logo.svg',
   iconfontUrl: '',
 };
 
