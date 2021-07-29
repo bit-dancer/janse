@@ -8,8 +8,8 @@ plugins {
 
 repositories {
     mavenLocal()
-    maven { url = Repositories.ALIYUN_REPO }
-    maven { url = Repositories.SPRING_REPO }
+    aliyun()
+    spring()
     mavenCentral()
 }
 
@@ -25,13 +25,12 @@ dependencies {
     annotationProcessor(Dependencies.MAPSTRUCT_PROCESSOR)
 
     // Test
-    testImplementation(Dependencies.SPRING_BOOT_STARTER_TEST)
 }
 
 tasks.withType<JavaCompile> {
-    sourceCompatibility = Settings.JAVA_VERSION
-    targetCompatibility = Settings.JAVA_VERSION
-    options.encoding = Settings.UTF_8
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+    options.encoding = "UTF-8"
 }
 
 tasks.test {

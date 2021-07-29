@@ -1,7 +1,7 @@
 plugins {
-    id(Plugins.CONVENTIONS_JAVA_APPLICATION)
-    id(Plugins.SPRING_BOOT) version Versions.SPRING_BOOT_VERSION
-    id(Plugins.DEPENDENCY_MANAGEMENT) version Versions.DEPENDENCY_MANAGEMENT_VERSION
+    `application-conventions`
+    `spring-boot`
+    `dependency-management`
 }
 
 group = "cn.bitdancer.janse"
@@ -12,4 +12,7 @@ dependencies {
     runtimeOnly(project(":janse-ui"))
 
     implementation(Dependencies.SPRING_BOOT_STARTER_WEB)
+    implementation(Dependencies.SPRING_BOOT_STARTER_DATA_JPA)
+    implementation(Dependencies.SPRING_OPENAPI)
+    testImplementation(Dependencies.SPRING_BOOT_STARTER_TEST)
 }
